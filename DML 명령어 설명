@@ -1,0 +1,56 @@
+DML(Data Manipulation Langauge 데이터 조작 언어)
+데이터를 생성 수정 삭제하거나 조회하는데 사용되는 언어
+1. *INSERT (데이터 삽입)*: 데이터베이스 테이블에 새로운 레코드(행)를 삽입합니다.
+2. *SELECT (데이터 조회)*: 데이터베이스 테이블에서 데이터를 조회하고 검색합니다.
+3. *UPDATE (데이터 수정)*: 이미 존재하는 데이터를 업데이트하고 수정합니다.
+4. *DELETE (데이터 삭제)*: 데이터베이스 테이블에서 레코드를 삭제합니다.
+이제 각각의 DML 명령어에 대한 설명과 간단한 예제 코드를 제공하겠습니다.
+
+### 1. INSERT (데이터 삽입)
+INSERT 문은 데이터베이스 테이블에 새로운 레코드를 추가하는 데 사용됩니다. 아래는 INSERT 문의 기본 구문과 예제 코드입니다.
+sql
+INSERT INTO 테이블이름 (열1, 열2, 열3, ...)
+VALUES (값1, 값2, 값3, ...);
+예제 코드:
+sql
+-- "users" 테이블에 새로운 사용자 레코드를 추가하는 예제
+INSERT INTO users (user_id, username, email)
+VALUES (1, 'johndoe', 'johndoe@example.com');
+
+### 2. SELECT (데이터 조회)
+SELECT 문은 데이터베이스 테이블에서 데이터를 조회하고 검색하는 데 사용됩니다. 아래는 SELECT 문의 기본 구문과 예제 코드입니다.
+sql
+SELECT 열1, 열2, ...(만약에 열을 지정하지 않고 모두 보가자 할 경우 * 입력)
+FROM 테이블이름
+WHERE 조건;
+예제 코드:
+sql
+-- "users" 테이블에서 username이 'johndoe'인 사용자를 조회하는 예제
+SELECT user_id, email
+FROM users
+WHERE username = 'johndoe';
+
+### 3. UPDATE (데이터 수정)
+UPDATE 문은 이미 존재하는 데이터를 업데이트하고 수정하는 데 사용됩니다. 아래는 UPDATE 문의 기본 구문과 예제 코드입니다.
+sql
+UPDATE 테이블이름
+SET 열1 = 값1, 열2 = 값2, ...
+WHERE 조건;
+예제 코드:
+sql
+-- "users" 테이블에서 user_id가 1인 사용자의 이메일 주소를 업데이트하는 예제
+UPDATE users
+SET email = 'newemail@example.com'
+WHERE user_id = 1;
+
+### 4. DELETE (데이터 삭제)
+DELETE 문은 데이터베이스 테이블에서 레코드를 삭제하는 데 사용됩니다. 아래는 DELETE 문의 기본 구문과 예제 코드입니다.
+sql
+DELETE FROM 테이블이름
+WHERE 조건;
+예제 코드:
+sql
+-- "users" 테이블에서 username이 'johndoe'인 사용자 레코드를 삭제하는 예제
+DELETE FROM users
+WHERE username = 'johndoe';
+위의 예제 코드는 DML 명령어의 기본적인 사용 사례를 보여줍니다. 각 명령어는 데이터베이스 테이블에서 데이터를 다룰 때 유용하게 활용됩니다.
